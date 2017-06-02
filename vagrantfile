@@ -1,0 +1,57 @@
+
+Virtualization
+
+Virtualization is the creation of a virtual (rather than actual) version of something, such as an operating system, a server, a storage device or network resources.
+What is OS Virtualization?
+With operating system virtualization nothing is pre-installed or permanently loaded on the local device and no hard-disk drive is needed. Everything is run from the network using a kind of virtual disk. With the current implementations, this virtual disk is actually a disk image file stored on a remote server, SAN or NAS. The client will be connected via the network to this virtual disk and will boot with the operating system installed on the virtual disk.
+
+Benefits of Virtualization:
+1.      Running multiple operating systems simultaneously.
+2.      Easier software installations.
+
+Virtualization Softwares Available are
+1.      Virtualbox
+2.      VMWare
+3.      Hyper-V
+
+Installation of Virtualbox:
+
+Virtualbox can be downloaded from (http://www.oracle.com/technetwork/server-storage/virtualbox/downloads).
+
+Please follow the link (http://lifehacker.com/5204434/the-beginners-guide-to-creating-virtual-machines-with-virtualbox) for detailed installation of virtualbox
+
+Creation of Ubuntu Virtual Machine in virtualbox.
+
+Download the ubuntu distribution from (). The steps to follow for creation of ubuntu vm in virtualbox are (http://www.psychocats.net/ubuntu/virtualbox) .                                 
+
+WHY VAGRANT?
+Vagrant provides easy to configure, reproducible, and portable work environments built on top of industry-standard technology and controlled by a single consistent workflow to help maximize the productivity and flexibility of you and your team.
+To achieve its magic, Vagrant stands on the shoulders of giants. Machines are provisioned on top of VirtualBox, VMware, AWS or any other provider.                       
+HOW VAGRANT BENEFITS YOU
+If you are a developer, Vagrant will isolate dependencies and their configuration within a single disposable, consistent environment, without sacrificing any of the tools you are used to working with (editors, browsers, debuggers, etc.). Once you or someone else creates a single Vagrant file, you just need to vagrant up and everything is installed and configured for you to work. Other members of your team create their development environments from the same configuration, so whether you are working on Linux, Mac OS X, or Windows, all your team members are running code in the same environment, against the same dependencies, all configured the same way. Say goodbye to "works on my machine" bugs.
+If you are an operations engineer, Vagrant gives you a disposable environment and consistent workflow for developing and testing infrastructure management scripts. You can quickly test things like shell scripts, Chef cookbooks, Puppet modules, and more using local virtualization such as VirtualBox or VMware. Then, with the same configuration, you can test these scripts on remote clouds such as AWS or RackSpace with the same workflow. Ditch your custom scripts to recycle EC2 instances, stop juggling SSH prompts to various machines, and start using Vagrant to bring sanity to your life.
+If you are a designer, Vagrant will automatically set everything up that is required for that web app in order for you to focus on doing what you do best: design. Once a developer configures Vagrant, you do not need to worry about how to get that app running ever again. No more bothering other developers to help you fix your environment so you can test designs. Just check out the code, vagrant up, and start designing.
+Head over to the Vagrant downloads page and get the appropriate installer or package for your platform. Install the package using standard procedures for your operating system.
+The installer will automatically add vagrant to your system path so that it is available in terminals. If it is not found, please try logging out and logging back into your system (this is particularly necessary sometimes for Windows).
+PROJECT SETUP
+The first step in configuring any Vagrant project is to create aVagrantfile. The purpose of the Vagrantfile is twofold:
+1.   Mark the root directory of your project. Many of the configuration options in Vagrant are relative to this root directory.
+2.   Describe the kind of machine and resources you need to run your project, as well as what software to install and how you want to access it.
+Vagrant has a built-in command for initializing a directory for usage with Vagrant: vagrant init. For the purpose of this getting started guide, please follow along in your terminal:
+$ mkdir vagrant_getting_started
+$ cd vagrant_getting_started
+$ vagrant init
+
+This will place a Vagrantfile in your current directory. You can take a look at the Vagrantfile if you want; it is filled with comments and examples.
+You can also run vagrant init in a pre-existing directory to setup Vagrant for an existing project.
+The Vagrantfile is meant to be committed to version control with your project, if you use version control. This way, every person working with that project can benefit from Vagrant without any upfront work.
+Virtualbox Virtual Ubuntu Instance Creation using Vagrant on windows:
+1.      Ensure Vagrant & Virtualbox are installed on your machine
+2.       Navigate to any directory (D:\VagrantFiles) u wish to start from
+3.      Type the following commands
+a.        Vagrant box add hashicorp/precise32
+b.      Vagrant init hashicorp/precise32
+                                                         i.            This command creates vagrantfile in the current directory
+c.       Vagrant up
+                                                         i.            This command launches the machine in virtualBox
+                                                       ii.            Navigate to virtual box to check the new virtual machine added.
